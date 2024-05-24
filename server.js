@@ -31,9 +31,9 @@ app.use("/api/v1/category", categoryRoute);
 app.use("/api/v1/product", productRoute);
 
 //rest api
-app.get('/', (req, res) => {
-    res.send("<h1> Welcome to E-Comm MERN Stack Web App </h1>");
-});
+// app.get('/', (req, res) => {
+//     res.send("<h1> Welcome to E-Comm MERN Stack Web App </h1>");
+// });
 
 //PORT
 const PORT = process.env.PORT || 8080;
