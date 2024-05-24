@@ -7,6 +7,7 @@ import authRoute from './routes/authRoute.js';
 import categoryRoute from './routes/categoryRoutes.js';
 import productRoute from './routes/productRoutes.js';
 import cors from 'cors';
+const path = require('path')
 
 
 //configure env
@@ -35,6 +36,13 @@ app.get('/', (req, res) => {
 
 //PORT
 const PORT = process.env.PORT;
+
+//deploy
+app.use(express.static(path.join(__dirname, "./client/build")));
+
+app.get("*", function (req, res) {
+    res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
 
 //run listen
 app.listen(PORT, () => {
