@@ -7,7 +7,7 @@ import authRoute from './routes/authRoute.js';
 import categoryRoute from './routes/categoryRoutes.js';
 import productRoute from './routes/productRoutes.js';
 import cors from 'cors';
-const path = require('path')
+import path from 'path';
 
 
 //configure env
@@ -46,5 +46,5 @@ app.get("*", function (req, res) {
 
 //run listen
 app.listen(PORT, () => {
-    console.log(`server running on ${PORT}`);
+    console.log(`server running on ${PORT}`)
 });
