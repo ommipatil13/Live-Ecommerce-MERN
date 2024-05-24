@@ -8,6 +8,7 @@ import categoryRoute from './routes/categoryRoutes.js';
 import productRoute from './routes/productRoutes.js';
 import cors from 'cors';
 import path from 'path';
+import { fileURLToPath } from 'url';
 
 
 //configure env
@@ -38,6 +39,9 @@ app.get('/', (req, res) => {
 const PORT = process.env.PORT;
 
 //deploy
+const __filename = fileURLToPath(import.meta.url); // get the resolved path to the file
+const __dirname = path.dirname(__filename); // get the name of the directory
+
 app.use(express.static(path.join(__dirname, "./client/build")));
 
 app.get("*", function (req, res) {
