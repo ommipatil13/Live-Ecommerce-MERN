@@ -36,7 +36,7 @@ app.get('/', (req, res) => {
 });
 
 //PORT
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 8080;
 
 //deploy
 const __filename = fileURLToPath(import.meta.url); // get the resolved path to the file
